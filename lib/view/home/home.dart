@@ -42,7 +42,7 @@ class Home extends StatelessWidget {
                     Container(
                       width: 155,
                       height: 200,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         gradient: LinearGradient(
                           begin: Alignment.bottomLeft,
                           end: Alignment.bottomRight,
@@ -129,7 +129,7 @@ class Home extends StatelessWidget {
                       right: 8,
                       bottom: 45,
                       child: Text(
-                        "1",
+                        "2",
                         style: TextStyle(
                           color: AppColors.iconColor,
                           fontSize: 70.0,
@@ -140,7 +140,6 @@ class Home extends StatelessWidget {
                 ),
               ],
             ),
-
             const SizedBox(
               height: 15.0,
             ),
@@ -186,7 +185,7 @@ class Home extends StatelessWidget {
                       right: 8,
                       bottom: 45,
                       child: Text(
-                        "1",
+                        "3",
                         style: TextStyle(
                           color: AppColors.iconColor,
                           fontSize: 70.0,
@@ -247,7 +246,6 @@ class Home extends StatelessWidget {
                     ),
                   ],
                 ),
-
               ],
             ),
           ],
@@ -256,5 +254,3 @@ class Home extends StatelessWidget {
     );
   }
 }
-
-

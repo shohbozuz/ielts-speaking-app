@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:ielts_speaking/data/color/color.dart';
 import 'package:ielts_speaking/view/drawer/drawer.dart';
 import 'package:icons_plus/icons_plus.dart';
+import 'package:share_plus/share_plus.dart';
 
 // crcr
 
@@ -15,7 +16,11 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              String textToShare =
+                  "Tavsiya etaman: Ielts Speaking and Cefr app : https://play.google.com/store/apps/details?id=ge.space.app.uzbekistan"; // Ulashmoqchi bo'lgan matn
+              Share.share(textToShare); // Matnni ulashish
+            },
             icon: const Icon(Bootstrap.share),
           ),
         ],
@@ -150,7 +155,7 @@ class Home extends StatelessWidget {
                     Container(
                       width: 155,
                       height: 200,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         gradient: LinearGradient(
                           begin: Alignment.bottomLeft,
                           end: Alignment.bottomRight,
@@ -159,13 +164,13 @@ class Home extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                       right: 45,
                       bottom: 20,
                       child: Column(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: EdgeInsets.all(8.0),
                             child: Icon(
                               Icons.keyboard_voice_rounded,
                               color: Colors.lightGreen,
@@ -181,7 +186,7 @@ class Home extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                       right: 8,
                       bottom: 45,
                       child: Text(
@@ -194,7 +199,7 @@ class Home extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 25.0,
                 ),
                 Stack(
@@ -233,7 +238,7 @@ class Home extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Positioned(
+                    const Positioned(
                       right: 23,
                       bottom: 20,
                       child: Text(

@@ -57,7 +57,7 @@ class Home extends StatelessWidget {
                           gradient: LinearGradient(
                             begin: Alignment.bottomLeft,
                             end: Alignment.bottomRight,
-                            colors: [Colors.black12, Colors.lightGreen],
+                            colors: [AppColors.black12, Colors.lightGreen],
                             stops: [0.65, 0.5],
                           ),
                         ),
@@ -78,7 +78,7 @@ class Home extends StatelessWidget {
                             Text(
                               "part",
                               style: TextStyle(
-                                color: Colors.black38,
+                                color: AppColors.black38,
                               ),
                             ),
                           ],
@@ -114,7 +114,10 @@ class Home extends StatelessWidget {
                           gradient: LinearGradient(
                             begin: Alignment.bottomLeft,
                             end: Alignment.bottomRight,
-                            colors: [Colors.black12, Colors.lightGreen],
+                            colors: [
+                              AppColors.black12,
+                              AppColors.containerpart2
+                            ],
                             stops: [0.65, 0.5],
                           ),
                         ),
@@ -128,14 +131,14 @@ class Home extends StatelessWidget {
                               padding: EdgeInsets.all(8.0),
                               child: Icon(
                                 Icons.keyboard_voice_rounded,
-                                color: Colors.lightGreen,
+                                color: AppColors.containerpart2,
                                 size: 100,
                               ),
                             ),
                             Text(
                               "part",
                               style: TextStyle(
-                                color: Colors.black38,
+                                color: AppColors.black38,
                               ),
                             ),
                           ],
@@ -175,7 +178,10 @@ class Home extends StatelessWidget {
                           gradient: LinearGradient(
                             begin: Alignment.bottomLeft,
                             end: Alignment.bottomRight,
-                            colors: [Colors.black12, Colors.lightGreen],
+                            colors: [
+                              AppColors.black12,
+                              AppColors.containerpart3
+                            ],
                             stops: [0.65, 0.5],
                           ),
                         ),
@@ -189,14 +195,14 @@ class Home extends StatelessWidget {
                               padding: EdgeInsets.all(8.0),
                               child: Icon(
                                 Icons.keyboard_voice_rounded,
-                                color: Colors.lightGreen,
+                                color: AppColors.containerpart3,
                                 size: 100,
                               ),
                             ),
                             Text(
                               "part",
                               style: TextStyle(
-                                color: Colors.black38,
+                                color: AppColors.black38,
                               ),
                             ),
                           ],
@@ -230,7 +236,7 @@ class Home extends StatelessWidget {
                         height: 200,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(5),
-                          color: Colors.black,
+                          color: AppColors.black,
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.shade500,
@@ -242,7 +248,10 @@ class Home extends StatelessWidget {
                           gradient: const LinearGradient(
                             begin: Alignment.centerRight,
                             end: Alignment.bottomRight,
-                            colors: [Colors.red, Colors.white],
+                            colors: [
+                              AppColors.containerbookmarks,
+                              AppColors.textColor
+                            ],
                             stops: [0.35, 0.11],
                           ),
                         ),
@@ -265,7 +274,7 @@ class Home extends StatelessWidget {
                         child: Text(
                           "bookmarks",
                           style: TextStyle(
-                            color: Colors.red,
+                            color: AppColors.containerbookmarks,
                             fontSize: 22.0,
                           ),
                         ),

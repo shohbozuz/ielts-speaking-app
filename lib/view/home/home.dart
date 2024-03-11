@@ -16,6 +16,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {
@@ -27,23 +28,19 @@ class Home extends StatelessWidget {
           ),
         ],
         iconTheme: const IconThemeData(color: AppColors.textColor),
-        title: Center(
-          child: Text("IELTS Speaking",
-              style: GoogleFonts.akshar(
-                color: AppColors.textColor,
-              )),
-        ),
+        title: Text("IELTS Speaking",
+            style: GoogleFonts.akshar(
+              color: AppColors.textColor,
+            )),
       ),
       drawer: const Drawer(
         child: DrawerWidget(),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-
             children: [
               GestureDetector(
                 onTap: () {
@@ -68,7 +65,6 @@ class Home extends StatelessWidget {
                       bottom: 20,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-
                         children: [
                           Icon(
                             Icons.keyboard_voice_rounded,
@@ -114,10 +110,7 @@ class Home extends StatelessWidget {
                         gradient: LinearGradient(
                           begin: Alignment.bottomLeft,
                           end: Alignment.bottomRight,
-                          colors: [
-                            AppColors.black12,
-                            AppColors.containerpart2
-                          ],
+                          colors: [AppColors.black12, AppColors.containerpart2],
                           stops: [0.65, 0.5],
                         ),
                       ),
@@ -127,7 +120,6 @@ class Home extends StatelessWidget {
                       bottom: 20,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-
                         children: [
                           Icon(
                             Icons.keyboard_voice_rounded,
@@ -164,7 +156,6 @@ class Home extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-
             children: [
               GestureDetector(
                 onTap: () {
@@ -179,10 +170,7 @@ class Home extends StatelessWidget {
                         gradient: LinearGradient(
                           begin: Alignment.bottomLeft,
                           end: Alignment.bottomRight,
-                          colors: [
-                            AppColors.black12,
-                            AppColors.containerpart3
-                          ],
+                          colors: [AppColors.black12, AppColors.containerpart3],
                           stops: [0.65, 0.5],
                         ),
                       ),
@@ -192,7 +180,6 @@ class Home extends StatelessWidget {
                       bottom: 20,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
-
                         children: [
                           Icon(
                             Icons.keyboard_voice_rounded,

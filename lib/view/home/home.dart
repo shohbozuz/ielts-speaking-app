@@ -244,8 +244,8 @@ class Home extends StatelessWidget {
                       ),
                     ),
                     const Positioned(
-                      right: 45,
-                      bottom: 100.0,
+                      right: 38,
+                      bottom: 90.0,
                       child: Icon(
                         Icons.star_border_sharp,
                         color: AppColors.textColor,

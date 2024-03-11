@@ -12,24 +12,24 @@ class DrawerWidget extends StatelessWidget {
     return Drawer(
       backgroundColor: AppColors.appbarTheme,
       child: ListView(
-        padding: EdgeInsets.zero,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 50),
-            child: Column(
-              children: [
-                Text(
-                  "Shohbozbek Turgunov",
-                  style: GoogleFonts.akshar(color: AppColors.textColor),
+          const SizedBox(
+            height: 20.0,
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                "Shohbozbek Turgunov",
+                style: GoogleFonts.akshar(color: AppColors.textColor),
+              ),
+              Text(
+                "Id 24384u375",
+                style: GoogleFonts.akshar(
+                  color: AppColors.textColor,
                 ),
-                Text(
-                  "Id 24384u375",
-                  style: GoogleFonts.akshar(
-                    color: AppColors.textColor,
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
           ListTile(
             title: const Text(
@@ -53,9 +53,10 @@ class DrawerWidget extends StatelessWidget {
             onTap: () {},
           ),
           const SizedBox(
-            height: 450,
+            height: 400.0,
           ),
           Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               SizedBox(
                 height: 50,
@@ -76,60 +77,58 @@ class DrawerWidget extends StatelessWidget {
                   color: Colors.white54,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 45),
-                child: Row(
-                  children: [
-                    IconButton(
-                      onPressed: () async {
-                        await launch(
-                          "https://t.me/shohbozbekuz",
-                          forceSafariVC: false,
-                          forceWebView: false,
-                          headers: <String, String>{
-                            'my_header_key': 'my_header_value'
-                          },
-                        );
-                      },
-                      icon: const Icon(Bootstrap.telegram,
-                          color: AppColors.iconColor),
-                    ),
-                    const SizedBox(
-                      width: 30.0,
-                    ),
-                    IconButton(
-                      onPressed: () async {
-                        await launch(
-                          "https://www.instagram.com/johnson_pub/",
-                          forceSafariVC: false,
-                          forceWebView: false,
-                          headers: <String, String>{
-                            'my_header_key': 'my_header_value'
-                          },
-                        );
-                      },
-                      icon: const Icon(Bootstrap.instagram,
-                          color: AppColors.iconColor),
-                    ),
-                    const SizedBox(
-                      width: 30.0,
-                    ),
-                    IconButton(
-                      onPressed: () async {
-                        await launch(
-                          "https://play.google.com/store/apps/details?id=uz.bepul_dasturlash_kursi.bepul_dasturlash_kursi&pcampaignid=web_share",
-                          forceSafariVC: false,
-                          forceWebView: false,
-                          headers: <String, String>{
-                            'my_header_key': 'my_header_value'
-                          },
-                        );
-                      },
-                      icon: const Icon(Bootstrap.google_play,
-                          color: AppColors.iconColor),
-                    ),
-                  ],
-                ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () async {
+                      await launch(
+                        "https://t.me/shohbozbekuz",
+                        forceSafariVC: false,
+                        forceWebView: false,
+                        headers: <String, String>{
+                          'my_header_key': 'my_header_value'
+                        },
+                      );
+                    },
+                    icon: const Icon(Bootstrap.telegram,
+                        color: AppColors.iconColor),
+                  ),
+                  const SizedBox(
+                    width: 30.0,
+                  ),
+                  IconButton(
+                    onPressed: () async {
+                      await launch(
+                        "https://www.instagram.com/johnson_pub/",
+                        forceSafariVC: false,
+                        forceWebView: false,
+                        headers: <String, String>{
+                          'my_header_key': 'my_header_value'
+                        },
+                      );
+                    },
+                    icon: const Icon(Bootstrap.instagram,
+                        color: AppColors.iconColor),
+                  ),
+                  const SizedBox(
+                    width: 30.0,
+                  ),
+                  IconButton(
+                    onPressed: () async {
+                      await launch(
+                        "https://play.google.com/store/apps/details?id=uz.bepul_dasturlash_kursi.bepul_dasturlash_kursi&pcampaignid=web_share",
+                        forceSafariVC: false,
+                        forceWebView: false,
+                        headers: <String, String>{
+                          'my_header_key': 'my_header_value'
+                        },
+                      );
+                    },
+                    icon: const Icon(Bootstrap.google_play,
+                        color: AppColors.iconColor),
+                  ),
+                ],
               ),
             ],
           ),

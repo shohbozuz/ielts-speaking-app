@@ -20,8 +20,7 @@ class part1 extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: const Padding(
-          padding: EdgeInsets.only(left: 95.0),
+        title: const Center(
           child: Text(
             "Part 1",
             style: TextStyle(color: AppColors.textColor),
@@ -30,7 +29,7 @@ class part1 extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Container(
+          SizedBox(
             width: double.infinity,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -43,18 +42,18 @@ class part1 extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 15.0,
           ),
           Container(
-            width: 300,
-            height: 50,
+            width: 250,
+            height: 40,
             color: Colors.blue,
             child: const Center(
               child: Text(
                 'READ ME',
                 style:
-                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
           ),
@@ -63,21 +62,21 @@ class part1 extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: 4,
+              itemCount: 40,
               itemBuilder: (context, index) {
                 return Column(
                   children: [
                     GestureDetector(
                       onTap: () {},
                       child: Container(
-                        width: 370,
-                        height: 100,
+                        width: 310,
+                        height: 80,
                         color: AppColors.bgcontainer,
                         child: Row(
                           children: [
                             Container(
-                              width: 85,
-                              height: 60,
+                              width: 70,
+                              height: 50,
                               decoration: const BoxDecoration(
                                 color: AppColors.circlecontainer, // Doira rangu
                                 shape: BoxShape.circle, // Doira shakli
@@ -87,14 +86,14 @@ class part1 extends StatelessWidget {
                                   '1',
                                   style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: 20,
+                                    fontSize: 10,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                               ),
                             ),
                             Container(
-                              width: 160,
+                              width: 140,
                               height: 100,
                               // color: Colors.cyanAccent,
                               child: const Center(
@@ -102,12 +101,12 @@ class part1 extends StatelessWidget {
                                   'INSTRUCTIONS: how to prepare cue cards',
                                   style: TextStyle(
                                       color: AppColors.conatinertext,
-                                      fontWeight: FontWeight.bold),
+                                      fontWeight: FontWeight.bold,fontSize: 10),
                                 ),
                               ),
                             ),
                             Container(
-                              width: 125,
+                              width: 100,
                               height: 100,
                               // color: Colors.red,
                               child: const Center(
@@ -115,7 +114,7 @@ class part1 extends StatelessWidget {
                                   // mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsets.only(top: 27.0, left: 50),
+                                      padding: EdgeInsets.only(top: 27.0, left: 15),
                                       child: Column(
                                         children: [
                                           Text(
@@ -137,12 +136,12 @@ class part1 extends StatelessWidget {
                                     ),
                                     Padding(
                                       padding:
-                                          EdgeInsets.only(right: 40.0, top: 25.0),
+                                      EdgeInsets.only(right: 10.0, top: 7.0),
                                       child: Text(
                                         'Answers Here ',
                                         style: TextStyle(
                                           color: AppColors.circlecontainer,
-                                          fontSize: 13.0,
+                                          fontSize: 11.0,
                                         ),
                                       ),
                                     ),
@@ -154,7 +153,7 @@ class part1 extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: 10.0,),
+                    const SizedBox(height: 10.0,),
                   ],
                 );
               },

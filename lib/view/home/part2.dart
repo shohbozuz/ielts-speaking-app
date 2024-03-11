@@ -15,8 +15,7 @@ class part2 extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: const Padding(
-          padding: EdgeInsets.only(left: 100.0),
+        title: const Center(
           child: Text(
             "Part 2",
             style: TextStyle(color: AppColors.textColor),

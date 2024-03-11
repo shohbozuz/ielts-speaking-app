@@ -15,8 +15,7 @@ class bookmarks extends StatelessWidget {
             Navigator.pop(context);
           },
         ),
-        title: const Padding(
-          padding: EdgeInsets.only(left: 75.0),
+        title: const Center(
           child: Text(
             "bookmarks",
             style: TextStyle(color: AppColors.textColor),

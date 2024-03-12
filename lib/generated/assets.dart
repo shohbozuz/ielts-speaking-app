@@ -2,6 +2,9 @@
 class Assets {
   Assets._();
 
+  static const String jsonPart1 = 'assets/json/part1.json';
+  static const String jsonPart2 = 'assets/json/part2.json';
+  static const String jsonPart3 = 'assets/json/part3.json';
   static const String logoLogo = 'assets/images/logo/logo.png';
   static const String splashScreenSplashScreen = 'assets/images/splash_screen/splash_screen.png';
 

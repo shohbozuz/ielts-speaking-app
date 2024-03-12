@@ -61,7 +61,7 @@ class part1 extends StatelessWidget {
           ),
           Expanded(
             child: ListView.builder(
-              itemCount: 40,
+              itemCount: 1,
               itemBuilder: (context, index) {
                 return Column(
                   children: [
@@ -72,6 +72,7 @@ class part1 extends StatelessWidget {
                         height: 80,
                         color: AppColors.bgcontainer,
                         child: Row(
+
                           children: [
                             Container(
                               width: 70,
@@ -110,28 +111,25 @@ class part1 extends StatelessWidget {
                               // color: Colors.red,
                               child: const Center(
                                 child: Column(
-                                  // mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsets.only(top: 27.0, left: 15),
-                                      child: Column(
-                                        children: [
-                                          Text(
-                                            'Free',
-                                            style: TextStyle(
-                                              color: AppColors.free_asnwers_text,
-                                              fontSize: 10.0,
-                                            ),
+                                    Column(
+                                      children: [
+                                        Text(
+                                          'Free',
+                                          style: TextStyle(
+                                            color: AppColors.free_asnwers_text,
+                                            fontSize: 10.0,
                                           ),
-                                          Text(
-                                            'answers',
-                                            style: TextStyle(
-                                              color: AppColors.free_asnwers_text,
-                                              fontSize: 10.0,
-                                            ),
+                                        ),
+                                        Text(
+                                          'answers',
+                                          style: TextStyle(
+                                            color: AppColors.free_asnwers_text,
+                                            fontSize: 10.0,
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                      ],
                                     ),
                                     Padding(
                                       padding:

@@ -3,7 +3,9 @@ import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:ielts_speaking/data/bloc/part1/part1_bloc.dart';
 
 import '../../data/color/color.dart';
 
@@ -52,7 +54,7 @@ class part1 extends StatelessWidget {
               child: Text(
                 'READ ME',
                 style:
-                TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
               ),
             ),
           ),
@@ -60,103 +62,126 @@ class part1 extends StatelessWidget {
             height: 5.0,
           ),
           Expanded(
-            child: ListView.builder(
-              itemCount: 1,
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    GestureDetector(
-                      onTap: () {},
-                      child: Container(
-                        width: 310,
-                        height: 80,
-                        color: AppColors.bgcontainer,
-                        child: Row(
-
-                          children: [
-                            Container(
-                              width: 70,
-                              height: 50,
-                              decoration: const BoxDecoration(
-                                color: AppColors.circlecontainer, // Doira rangu
-                                shape: BoxShape.circle, // Doira shakli
-                              ),
-                              child: const Center(
-                                child: Text(
-                                  '1',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold,
+            child: BlocBuilder<Part1Bloc, Part1State>(
+              builder: (context, state) {
+                return state.when(
+                    initial: () => const Center(
+                          child: Text('Initial State'),
+                        ),
+                    loading: () => const Center(
+                          child: CircularProgressIndicator.adaptive(),
+                        ),
+                    error: (error) => Center(
+                          child: Text(error),
+                        ),
+                    success: (data) {
+                      return ListView.builder(
+                        itemCount: data.length,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            children: [
+                              GestureDetector(
+                                onTap: () {},
+                                child: Container(
+                                  width: 310,
+                                  height: 80,
+                                  color: AppColors.bgcontainer,
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        width: 70,
+                                        height: 50,
+                                        decoration: const BoxDecoration(
+                                          color: AppColors.circlecontainer,
+                                          // Doira rangu
+                                          shape:
+                                              BoxShape.circle, // Doira shakli
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            data[index].id.toString(),
+                                            style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                      Container(
+                                        width: 140,
+                                        height: 100,
+                                        // color: Colors.cyanAccent,
+                                        child:  Center(
+                                          child: Text(
+                                            data[index].title.toString(),
+                                            style: const TextStyle(
+                                                color: AppColors.conatinertext,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 10),
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(
+                                        width: 100,
+                                        height: 100,
+                                        // color: Colors.red,
+                                        child: Center(
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Column(
+                                                children: [
+                                                  Text(
+                                                    'Free',
+                                                    style: TextStyle(
+                                                      color: AppColors
+                                                          .free_asnwers_text,
+                                                      fontSize: 10.0,
+                                                    ),
+                                                  ),
+                                                  Text(
+                                                    'answers',
+                                                    style: TextStyle(
+                                                      color: AppColors
+                                                          .free_asnwers_text,
+                                                      fontSize: 10.0,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsets.only(
+                                                    right: 10.0, top: 7.0),
+                                                child: Text(
+                                                  'Answers Here ',
+                                                  style: TextStyle(
+                                                    color: AppColors
+                                                        .circlecontainer,
+                                                    fontSize: 11.0,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
-                            ),
-                            Container(
-                              width: 140,
-                              height: 100,
-                              // color: Colors.cyanAccent,
-                              child: const Center(
-                                child: Text(
-                                  'INSTRUCTIONS: how to prepare cue cards',
-                                  style: TextStyle(
-                                      color: AppColors.conatinertext,
-                                      fontWeight: FontWeight.bold,fontSize: 10),
-                                ),
+                              const SizedBox(
+                                height: 10.0,
                               ),
-                            ),
-                            Container(
-                              width: 100,
-                              height: 100,
-                              // color: Colors.red,
-                              child: const Center(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        Text(
-                                          'Free',
-                                          style: TextStyle(
-                                            color: AppColors.free_asnwers_text,
-                                            fontSize: 10.0,
-                                          ),
-                                        ),
-                                        Text(
-                                          'answers',
-                                          style: TextStyle(
-                                            color: AppColors.free_asnwers_text,
-                                            fontSize: 10.0,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                    Padding(
-                                      padding:
-                                      EdgeInsets.only(right: 10.0, top: 7.0),
-                                      child: Text(
-                                        'Answers Here ',
-                                        style: TextStyle(
-                                          color: AppColors.circlecontainer,
-                                          fontSize: 11.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 10.0,),
-                  ],
-                );
+                            ],
+                          );
+                        },
+                      );
+                    });
               },
             ),
           ),
-
         ],
       ),
       backgroundColor: AppColors.bgpart,

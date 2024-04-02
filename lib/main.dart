@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:ielts_speaking/data/bloc/part1/part1_bloc.dart';
 import 'package:ielts_speaking/data/color/color.dart';
 import 'package:ielts_speaking/view/home/bookmarks.dart';
 import 'package:go_router/go_router.dart';
@@ -22,7 +24,10 @@ final GoRouter _router = GoRouter(
         GoRoute(
           path: 'part1',
           builder: (BuildContext context, GoRouterState state) {
-            return const part1();
+            return BlocProvider(
+              create: (context) => Part1Bloc(),
+              child: const part1(),
+            );
           },
         ),
         GoRoute(
@@ -49,7 +54,6 @@ final GoRouter _router = GoRouter(
 );
 
 class MyApp extends StatelessWidget {
-
   const MyApp({super.key});
 
   @override
@@ -66,8 +70,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
-
-

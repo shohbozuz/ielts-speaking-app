@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:ielts_speaking/data/color/color.dart';
 
 import 'package:ielts_speaking/view/home/part1/tab_item.dart';
@@ -84,7 +86,9 @@ class Parts extends StatelessWidget {
                             color: Colors.white,
                             size: 20.0,
                           ),
-                          SizedBox(width: 3.0,),
+                          SizedBox(
+                            width: 3.0,
+                          ),
                           Text(
                             'Answers',
                             style:
@@ -99,12 +103,42 @@ class Parts extends StatelessWidget {
             ),
           ),
         ),
-        backgroundColor: AppColors.bodyColor,
-        body: const TabBarView(
+        backgroundColor: AppColors.appbarTheme,
+        body: TabBarView(
           children: [
-            Center(child: Text('Inbox Page')),
-            Center(child: Text('Archived Page')),
-            Center(child: Text('Deleted Page')),
+            Center(
+              child: Container(
+                height: 700,
+                width: 380,
+                color: Colors.white,
+                child: const Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Text("Vocabulary"),
+                ),
+              ),
+            ),
+            Center(
+              child: Container(
+                height: 700,
+                width: 380,
+                color: Colors.white,
+                child: const Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Text("Ideas"),
+                ),
+              ),
+            ),
+            Center(
+              child: Container(
+                height: 700,
+                width: 380,
+                color: Colors.white,
+                child: const Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Text("Answers"),
+                ),
+              ),
+            ),
           ],
         ),
       ),

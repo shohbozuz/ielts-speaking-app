@@ -5,7 +5,8 @@ import 'package:ielts_speaking/data/color/color.dart';
 import 'package:ielts_speaking/view/home/bookmarks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ielts_speaking/view/home/home.dart';
-import 'package:ielts_speaking/view/home/part1.dart';
+import 'package:ielts_speaking/view/home/part1/part1.dart';
+import 'package:ielts_speaking/view/home/part1/steps.dart';
 import 'package:ielts_speaking/view/home/part2.dart';
 import 'package:ielts_speaking/view/home/part3.dart';
 
@@ -19,6 +20,7 @@ final GoRouter _router = GoRouter(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
         return const Home();
+        // return const Steps();
       },
       routes: <RouteBase>[
         GoRoute(

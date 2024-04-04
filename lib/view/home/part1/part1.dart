@@ -1,13 +1,11 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
 import 'package:ielts_speaking/data/bloc/part1/part1_bloc.dart';
+import 'package:ielts_speaking/view/home/part1/steps.dart';
 
-import '../../data/color/color.dart';
+import '../../../data/color/color.dart';
 
 class part1 extends StatelessWidget {
   const part1({Key? key}) : super(key: key);
@@ -69,7 +67,9 @@ class part1 extends StatelessWidget {
                           child: Text('Initial State'),
                         ),
                     loading: () => const Center(
-                          child: CircularProgressIndicator.adaptive(),
+                          child: CircularProgressIndicator.adaptive(
+                            backgroundColor: AppColors.appbarTheme,
+                          ),
                         ),
                     error: (error) => Center(
                           child: Text(error),
@@ -81,7 +81,15 @@ class part1 extends StatelessWidget {
                           return Column(
                             children: [
                               GestureDetector(
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          Steps(data[index].steps),
+                                    ),
+                                  );
+                                },
                                 child: Container(
                                   width: 310,
                                   height: 80,
@@ -112,7 +120,7 @@ class part1 extends StatelessWidget {
                                         width: 140,
                                         height: 100,
                                         // color: Colors.cyanAccent,
-                                        child:  Center(
+                                        child: Center(
                                           child: Text(
                                             data[index].title.toString(),
                                             style: const TextStyle(

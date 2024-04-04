@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:ielts_speaking/data/color/color.dart';
 import 'package:ielts_speaking/view/drawer/drawer.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -28,8 +27,8 @@ class Home extends StatelessWidget {
           ),
         ],
         iconTheme: const IconThemeData(color: AppColors.textColor),
-        title: Text("IELTS Speaking",
-            style: GoogleFonts.akshar(
+        title: const Text("IELTS Speaking",
+            style: TextStyle(
               color: AppColors.textColor,
             )),
       ),

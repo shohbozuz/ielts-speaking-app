@@ -9,6 +9,7 @@ class AppColors{
   static const Color rang4 = Color(0xFF1976B7);
   static const Color rang5 = Color(0xFF88C64A);
   static const Color bgpart = Color(0xFF00ADEF);
+  static const Color bodyColor = Color(0xFFDDEDC8);
   static const Color bgcontainer = Color(0xFFF1F1F1);
   static const Color containerpart2 = Color(0xFF00ADEF);
   static const Color containerpart3 = Color(0xFFF6931E);

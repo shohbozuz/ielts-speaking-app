@@ -9,7 +9,7 @@
         "id": 1,
         "name": "step 1",
         "parts": {
-          "vocabulary": "For step instructions,check the 'Ideas' sections",
+          "vocabulary": "For step insttelructions,check the 'Ideas' sections",
           "ideas": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam ",
           "answers": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam "
         }
@@ -52,7 +52,7 @@
     ]
   },
   {
-    "id": 1,
+    "id": 3,
     "title": "Instructions: how to practice answersing part1 speaking questions ",
     "question": 2,
     "steps":
@@ -79,3 +79,6 @@
   }
 
 ]
+
+
+

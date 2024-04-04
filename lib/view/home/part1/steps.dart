@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ielts_speaking/data/color/color.dart';
 import 'package:ielts_speaking/data/model/part1.dart' as CustomModel;
+import 'package:ielts_speaking/view/home/part1/parts.dart';
 
 class Steps extends StatelessWidget {
   final List<CustomModel.Step> steps;
@@ -37,13 +38,13 @@ class Steps extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          // Navigator.push(
-                          //   context,
-                          //   MaterialPageRoute(
-                          //     builder: (context) =>
-                          //         SecondPage(data[index].steps),
-                          //   ),
-                          // );
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                              Parts([steps[index].parts]),
+                            ),
+                          );
                         },
                         child: Container(
                           width: 310,

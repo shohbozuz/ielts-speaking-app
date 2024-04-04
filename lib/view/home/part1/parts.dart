@@ -2,11 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ielts_speaking/data/color/color.dart';
-
-import 'package:ielts_speaking/view/home/part1/tab_item.dart';
+import 'package:ielts_speaking/data/model/part1.dart' as CustomModel;
 
 class Parts extends StatelessWidget {
-  const Parts({super.key});
+  final List<CustomModel.Parts> parts;
+
+  const Parts(this.parts, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -111,10 +112,17 @@ class Parts extends StatelessWidget {
                 height: 700,
                 width: 380,
                 color: Colors.white,
-                child: const Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text("Vocabulary"),
-                ),
+                child: Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: ListView.builder(
+                      itemCount: parts.length,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return Text(
+                          parts[index].vocabulary,
+                        );
+                      },
+                    )),
               ),
             ),
             Center(
@@ -122,10 +130,17 @@ class Parts extends StatelessWidget {
                 height: 700,
                 width: 380,
                 color: Colors.white,
-                child: const Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text("Ideas"),
-                ),
+                child: Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: ListView.builder(
+                      itemCount: parts.length,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return Text(
+                          parts[index].ideas,
+                        );
+                      },
+                    )),
               ),
             ),
             Center(
@@ -133,10 +148,17 @@ class Parts extends StatelessWidget {
                 height: 700,
                 width: 380,
                 color: Colors.white,
-                child: const Padding(
-                  padding: EdgeInsets.all(20.0),
-                  child: Text("Answers"),
-                ),
+                child: Padding(
+                    padding: EdgeInsets.all(20.0),
+                    child: ListView.builder(
+                      itemCount: parts.length,
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return Text(
+                          parts[index].answers,
+                        );
+                      },
+                    )),
               ),
             ),
           ],

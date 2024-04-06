@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ielts_speaking/data/bloc/part1/part1_bloc.dart';
 import 'package:ielts_speaking/data/bloc/part2/part2_bloc.dart';
+import 'package:ielts_speaking/data/bloc/part3/part3_bloc.dart';
 import 'package:ielts_speaking/data/color/color.dart';
 import 'package:ielts_speaking/view/home/bookmarks.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ielts_speaking/view/home/home.dart';
 import 'package:ielts_speaking/view/home/part1/part1.dart';
 import 'package:ielts_speaking/view/home/part2/part2.dart';
-import 'package:ielts_speaking/view/home/part3.dart';
+import 'package:ielts_speaking/view/home/part3/part3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,7 +45,10 @@ final GoRouter _router = GoRouter(
         GoRoute(
           path: 'part3',
           builder: (BuildContext context, GoRouterState state) {
-            return const part3();
+            return BlocProvider(
+              create: (context) => Part3Bloc(),
+              child: const part3(),
+            );
           },
         ),
         GoRoute(

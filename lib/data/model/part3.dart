@@ -1,37 +1,37 @@
 import 'package:meta/meta.dart';
 import 'dart:convert';
 
-class Part1Model {
+class Part3Model {
   int id;
   String title;
   int question;
   List<Step> steps;
 
-  Part1Model({
+  Part3Model({
     required this.id,
     required this.title,
     required this.question,
     required this.steps,
   });
 
-  Part1Model copyWith({
+  Part3Model copyWith({
     int? id,
     String? title,
     int? question,
     List<Step>? steps,
   }) =>
-      Part1Model(
+      Part3Model(
         id: id ?? this.id,
         title: title ?? this.title,
         question: question ?? this.question,
         steps: steps ?? this.steps,
       );
 
-  factory Part1Model.fromRawJson(String str) => Part1Model.fromJson(json.decode(str));
+  factory Part3Model.fromRawJson(String str) => Part3Model.fromJson(json.decode(str));
 
   String toRawJson() => json.encode(toJson());
 
-  factory Part1Model.fromJson(Map<String, dynamic> json) => Part1Model(
+  factory Part3Model.fromJson(Map<String, dynamic> json) => Part3Model(
     id: json["id"],
     title: json["title"],
     question: json["question"],

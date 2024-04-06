@@ -2,13 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ielts_speaking/data/bloc/part1/part1_bloc.dart';
-import 'package:ielts_speaking/view/home/part1/steps.dart';
-
+import 'package:ielts_speaking/data/bloc/part2/part2_bloc.dart';
+import 'package:ielts_speaking/view/home/part2/parts.dart';
 import '../../../data/color/color.dart';
 
-class part1 extends StatelessWidget {
-  const part1({Key? key}) : super(key: key);
+class part2 extends StatelessWidget {
+  const part2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +21,7 @@ class part1 extends StatelessWidget {
           },
         ),
         title: const Text(
-          "Part 1",
+          "Part 2",
           style: TextStyle(color: AppColors.textColor),
         ),
       ),
@@ -60,7 +59,7 @@ class part1 extends StatelessWidget {
             height: 5.0,
           ),
           Expanded(
-            child: BlocBuilder<Part1Bloc, Part1State>(
+            child: BlocBuilder<Part2Bloc, Part2State>(
               builder: (context, state) {
                 return state.when(
                     initial: () => const Center(
@@ -85,8 +84,7 @@ class part1 extends StatelessWidget {
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          Steps(data[index].steps),
+                                        builder: (context) => Parts(data),
                                     ),
                                   );
                                 },
@@ -101,7 +99,6 @@ class part1 extends StatelessWidget {
                                         height: 50,
                                         decoration: const BoxDecoration(
                                           color: AppColors.circlecontainer,
-                                          // Doira rangu
                                           shape:
                                               BoxShape.circle, // Doira shakli
                                         ),
@@ -130,7 +127,7 @@ class part1 extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                       SizedBox(
+                                      const SizedBox(
                                         width: 100,
                                         height: 100,
                                         // color: Colors.red,
@@ -139,7 +136,7 @@ class part1 extends StatelessWidget {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,
                                             children: [
-                                              const Column(
+                                              Column(
                                                 children: [
                                                   Text(
                                                     'Free',
@@ -160,11 +157,11 @@ class part1 extends StatelessWidget {
                                                 ],
                                               ),
                                               Padding(
-                                                padding: const EdgeInsets.only(
-                                                    right: 10.0, top: 20.0),
+                                                padding: EdgeInsets.only(
+                                                    right: 10.0, top: 7.0),
                                                 child: Text(
-                                                  "${data[index].question.toString()} question",
-                                                  style: const TextStyle(
+                                                  'Answers Here ',
+                                                  style: TextStyle(
                                                     color: AppColors
                                                         .circlecontainer,
                                                     fontSize: 11.0,

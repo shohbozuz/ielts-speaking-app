@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'part1_bloc.dart';
+part of 'part2_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,58 +15,58 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$Part1Event {
+mixin _$Part2Event {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getPar1,
+    required TResult Function() getPart2,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getPar1,
+    TResult? Function()? getPart2,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getPar1,
+    TResult Function()? getPart2,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetPart1 value) getPar1,
+    required TResult Function(_GetPart2 value) getPart2,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetPart1 value)? getPar1,
+    TResult? Function(_GetPart2 value)? getPart2,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetPart1 value)? getPar1,
+    TResult Function(_GetPart2 value)? getPart2,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $Part1EventCopyWith<$Res> {
-  factory $Part1EventCopyWith(
-          Part1Event value, $Res Function(Part1Event) then) =
-      _$Part1EventCopyWithImpl<$Res, Part1Event>;
+abstract class $Part2EventCopyWith<$Res> {
+  factory $Part2EventCopyWith(
+          Part2Event value, $Res Function(Part2Event) then) =
+      _$Part2EventCopyWithImpl<$Res, Part2Event>;
 }
 
 /// @nodoc
-class _$Part1EventCopyWithImpl<$Res, $Val extends Part1Event>
-    implements $Part1EventCopyWith<$Res> {
-  _$Part1EventCopyWithImpl(this._value, this._then);
+class _$Part2EventCopyWithImpl<$Res, $Val extends Part2Event>
+    implements $Part2EventCopyWith<$Res> {
+  _$Part2EventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,7 +83,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$Part1EventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$Part2EventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -97,7 +97,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'Part1Event.started()';
+    return 'Part2Event.started()';
   }
 
   @override
@@ -113,7 +113,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getPar1,
+    required TResult Function() getPart2,
   }) {
     return started();
   }
@@ -122,7 +122,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getPar1,
+    TResult? Function()? getPart2,
   }) {
     return started?.call();
   }
@@ -131,7 +131,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getPar1,
+    TResult Function()? getPart2,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,7 +144,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetPart1 value) getPar1,
+    required TResult Function(_GetPart2 value) getPart2,
   }) {
     return started(this);
   }
@@ -153,7 +153,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetPart1 value)? getPar1,
+    TResult? Function(_GetPart2 value)? getPart2,
   }) {
     return started?.call(this);
   }
@@ -162,7 +162,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetPart1 value)? getPar1,
+    TResult Function(_GetPart2 value)? getPart2,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -172,40 +172,40 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements Part1Event {
+abstract class _Started implements Part2Event {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$GetPart1ImplCopyWith<$Res> {
-  factory _$$GetPart1ImplCopyWith(
-          _$GetPart1Impl value, $Res Function(_$GetPart1Impl) then) =
-      __$$GetPart1ImplCopyWithImpl<$Res>;
+abstract class _$$GetPart2ImplCopyWith<$Res> {
+  factory _$$GetPart2ImplCopyWith(
+          _$GetPart2Impl value, $Res Function(_$GetPart2Impl) then) =
+      __$$GetPart2ImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetPart1ImplCopyWithImpl<$Res>
-    extends _$Part1EventCopyWithImpl<$Res, _$GetPart1Impl>
-    implements _$$GetPart1ImplCopyWith<$Res> {
-  __$$GetPart1ImplCopyWithImpl(
-      _$GetPart1Impl _value, $Res Function(_$GetPart1Impl) _then)
+class __$$GetPart2ImplCopyWithImpl<$Res>
+    extends _$Part2EventCopyWithImpl<$Res, _$GetPart2Impl>
+    implements _$$GetPart2ImplCopyWith<$Res> {
+  __$$GetPart2ImplCopyWithImpl(
+      _$GetPart2Impl _value, $Res Function(_$GetPart2Impl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetPart1Impl implements _GetPart1 {
-  const _$GetPart1Impl();
+class _$GetPart2Impl implements _GetPart2 {
+  const _$GetPart2Impl();
 
   @override
   String toString() {
-    return 'Part1Event.getPar1()';
+    return 'Part2Event.getPart2()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetPart1Impl);
+        (other.runtimeType == runtimeType && other is _$GetPart2Impl);
   }
 
   @override
@@ -215,29 +215,29 @@ class _$GetPart1Impl implements _GetPart1 {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getPar1,
+    required TResult Function() getPart2,
   }) {
-    return getPar1();
+    return getPart2();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getPar1,
+    TResult? Function()? getPart2,
   }) {
-    return getPar1?.call();
+    return getPart2?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getPar1,
+    TResult Function()? getPart2,
     required TResult orElse(),
   }) {
-    if (getPar1 != null) {
-      return getPar1();
+    if (getPart2 != null) {
+      return getPart2();
     }
     return orElse();
   }
@@ -246,46 +246,46 @@ class _$GetPart1Impl implements _GetPart1 {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetPart1 value) getPar1,
+    required TResult Function(_GetPart2 value) getPart2,
   }) {
-    return getPar1(this);
+    return getPart2(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetPart1 value)? getPar1,
+    TResult? Function(_GetPart2 value)? getPart2,
   }) {
-    return getPar1?.call(this);
+    return getPart2?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetPart1 value)? getPar1,
+    TResult Function(_GetPart2 value)? getPart2,
     required TResult orElse(),
   }) {
-    if (getPar1 != null) {
-      return getPar1(this);
+    if (getPart2 != null) {
+      return getPart2(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetPart1 implements Part1Event {
-  const factory _GetPart1() = _$GetPart1Impl;
+abstract class _GetPart2 implements Part2Event {
+  const factory _GetPart2() = _$GetPart2Impl;
 }
 
 /// @nodoc
-mixin _$Part1State {
+mixin _$Part2State {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String err) error,
-    required TResult Function(List<Part1Model> data) success,
+    required TResult Function(List<Part2Model> data) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -293,7 +293,7 @@ mixin _$Part1State {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String err)? error,
-    TResult? Function(List<Part1Model> data)? success,
+    TResult? Function(List<Part2Model> data)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -301,7 +301,7 @@ mixin _$Part1State {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String err)? error,
-    TResult Function(List<Part1Model> data)? success,
+    TResult Function(List<Part2Model> data)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -333,16 +333,16 @@ mixin _$Part1State {
 }
 
 /// @nodoc
-abstract class $Part1StateCopyWith<$Res> {
-  factory $Part1StateCopyWith(
-          Part1State value, $Res Function(Part1State) then) =
-      _$Part1StateCopyWithImpl<$Res, Part1State>;
+abstract class $Part2StateCopyWith<$Res> {
+  factory $Part2StateCopyWith(
+          Part2State value, $Res Function(Part2State) then) =
+      _$Part2StateCopyWithImpl<$Res, Part2State>;
 }
 
 /// @nodoc
-class _$Part1StateCopyWithImpl<$Res, $Val extends Part1State>
-    implements $Part1StateCopyWith<$Res> {
-  _$Part1StateCopyWithImpl(this._value, this._then);
+class _$Part2StateCopyWithImpl<$Res, $Val extends Part2State>
+    implements $Part2StateCopyWith<$Res> {
+  _$Part2StateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -359,7 +359,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$Part1StateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$Part2StateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -373,7 +373,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'Part1State.initial()';
+    return 'Part2State.initial()';
   }
 
   @override
@@ -391,7 +391,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String err) error,
-    required TResult Function(List<Part1Model> data) success,
+    required TResult Function(List<Part2Model> data) success,
   }) {
     return initial();
   }
@@ -402,7 +402,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String err)? error,
-    TResult? Function(List<Part1Model> data)? success,
+    TResult? Function(List<Part2Model> data)? success,
   }) {
     return initial?.call();
   }
@@ -413,7 +413,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String err)? error,
-    TResult Function(List<Part1Model> data)? success,
+    TResult Function(List<Part2Model> data)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -460,7 +460,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements Part1State {
+abstract class _Initial implements Part2State {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -473,7 +473,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$Part1StateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$Part2StateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -487,7 +487,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'Part1State.loading()';
+    return 'Part2State.loading()';
   }
 
   @override
@@ -505,7 +505,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String err) error,
-    required TResult Function(List<Part1Model> data) success,
+    required TResult Function(List<Part2Model> data) success,
   }) {
     return loading();
   }
@@ -516,7 +516,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String err)? error,
-    TResult? Function(List<Part1Model> data)? success,
+    TResult? Function(List<Part2Model> data)? success,
   }) {
     return loading?.call();
   }
@@ -527,7 +527,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String err)? error,
-    TResult Function(List<Part1Model> data)? success,
+    TResult Function(List<Part2Model> data)? success,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -574,7 +574,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements Part1State {
+abstract class _Loading implements Part2State {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -589,7 +589,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$Part1StateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$Part2StateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -619,7 +619,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'Part1State.error(err: $err)';
+    return 'Part2State.error(err: $err)';
   }
 
   @override
@@ -645,7 +645,7 @@ class _$ErrorImpl implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String err) error,
-    required TResult Function(List<Part1Model> data) success,
+    required TResult Function(List<Part2Model> data) success,
   }) {
     return error(err);
   }
@@ -656,7 +656,7 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String err)? error,
-    TResult? Function(List<Part1Model> data)? success,
+    TResult? Function(List<Part2Model> data)? success,
   }) {
     return error?.call(err);
   }
@@ -667,7 +667,7 @@ class _$ErrorImpl implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String err)? error,
-    TResult Function(List<Part1Model> data)? success,
+    TResult Function(List<Part2Model> data)? success,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -714,7 +714,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements Part1State {
+abstract class _Error implements Part2State {
   const factory _Error(final String err) = _$ErrorImpl;
 
   String get err;
@@ -729,12 +729,12 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<Part1Model> data});
+  $Res call({List<Part2Model> data});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$Part1StateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$Part2StateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -749,7 +749,7 @@ class __$$SuccessImplCopyWithImpl<$Res>
       null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<Part1Model>,
+              as List<Part2Model>,
     ));
   }
 }
@@ -757,11 +757,11 @@ class __$$SuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(final List<Part1Model> data) : _data = data;
+  const _$SuccessImpl(final List<Part2Model> data) : _data = data;
 
-  final List<Part1Model> _data;
+  final List<Part2Model> _data;
   @override
-  List<Part1Model> get data {
+  List<Part2Model> get data {
     if (_data is EqualUnmodifiableListView) return _data;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_data);
@@ -769,7 +769,7 @@ class _$SuccessImpl implements _Success {
 
   @override
   String toString() {
-    return 'Part1State.success(data: $data)';
+    return 'Part2State.success(data: $data)';
   }
 
   @override
@@ -796,7 +796,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String err) error,
-    required TResult Function(List<Part1Model> data) success,
+    required TResult Function(List<Part2Model> data) success,
   }) {
     return success(data);
   }
@@ -807,7 +807,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String err)? error,
-    TResult? Function(List<Part1Model> data)? success,
+    TResult? Function(List<Part2Model> data)? success,
   }) {
     return success?.call(data);
   }
@@ -818,7 +818,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String err)? error,
-    TResult Function(List<Part1Model> data)? success,
+    TResult Function(List<Part2Model> data)? success,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -865,10 +865,10 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements Part1State {
-  const factory _Success(final List<Part1Model> data) = _$SuccessImpl;
+abstract class _Success implements Part2State {
+  const factory _Success(final List<Part2Model> data) = _$SuccessImpl;
 
-  List<Part1Model> get data;
+  List<Part2Model> get data;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;

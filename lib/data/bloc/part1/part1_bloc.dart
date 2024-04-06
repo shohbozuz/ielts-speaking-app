@@ -17,22 +17,16 @@ class Part1Bloc extends Bloc<Part1Event, Part1State> {
     add(const _GetPart1());
   }
 
-
-  final Par1Service _part1Service = Par1Service();
+  final Part1Service _part1Service = Part1Service();
 
   Future<void> getPart1(_GetPart1 event, Emitter<Part1State> emit) async {
-    // Yuklanmoqda holatni belgilash
     emit(const Part1State.loading());
 
-    // UserService dan foydalanuvchilarni olish
     final res = await _part1Service.getPart1();
 
-    // Natijalarni tekshirish va emittga joylash
     res.fold(
-          (error) => emit(Part1State.error(error)),
-          (data) => emit(Part1State.success(data)),
+      (error) => emit(Part1State.error(error)),
+      (data) => emit(Part1State.success(data)),
     );
   }
-
-
 }

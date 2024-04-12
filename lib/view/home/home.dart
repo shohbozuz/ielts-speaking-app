@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:ielts_speaking/data/color/color.dart';
 import 'package:ielts_speaking/view/drawer/drawer.dart';
 import 'package:icons_plus/icons_plus.dart';
@@ -21,7 +20,7 @@ class Home extends StatelessWidget {
             onPressed: () {
               String textToShare =
                   "Tavsiya etaman: Ielts Speaking and Cefr app : https://play.google.com/store/apps/details?id=ge.space.app.uzbekistan"; // Ulashmoqchi bo'lgan matn
-              Share.share(textToShare); // Matnni ulashish
+              Share.share(textToShare);
             },
             icon: const Icon(Bootstrap.share),
           ),
@@ -32,7 +31,7 @@ class Home extends StatelessWidget {
               color: AppColors.textColor,
             )),
       ),
-      drawer: const Drawer(
+      drawer:  Drawer(
         child: DrawerWidget(),
       ),
       body: Column(
@@ -43,7 +42,7 @@ class Home extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  context.go("/part1");
+                  Navigator.of(context).pushNamed('/part1');
                 },
                 child: Stack(
                   children: [
@@ -98,7 +97,8 @@ class Home extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  context.go("/part2");
+                  Navigator.of(context).pushNamed('/part2');
+
                 },
                 child: Stack(
                   children: [
@@ -158,7 +158,7 @@ class Home extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  context.go("/part3");
+                  Navigator.of(context).pushNamed('/part3');
                 },
                 child: Stack(
                   children: [
@@ -213,7 +213,8 @@ class Home extends StatelessWidget {
               ),
               GestureDetector(
                 onTap: () {
-                  context.go("/bookmarks");
+                  Navigator.of(context).pushNamed('/bookmarks');
+
                 },
                 child: Stack(
                   children: [

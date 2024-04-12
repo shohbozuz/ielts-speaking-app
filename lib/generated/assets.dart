@@ -2,22 +2,11 @@
 class Assets {
   Assets._();
 
-  static const String colorColor = 'lib/data/color/color.dart';
-  static const String drawerDrawer = 'lib/view/drawer/drawer.dart';
-  static const String generatedAssets = 'lib/generated/assets.dart';
-  static const String homeBookmarks = 'lib/view/home/bookmarks.dart';
-  static const String homeHome = 'lib/view/home/home.dart';
-  static const String homePart1 = 'lib/view/home/part2.dart';
-  static const String homePart2 = 'lib/view/home/part2.dart';
-  static const String homePart3 = 'lib/view/home/part3.dart';
+  static const String assetsJsonPart1 = 'assets/json/part1.json';
   static const String jsonPart1 = 'assets/json/part1.json';
   static const String jsonPart2 = 'assets/json/part2.json';
   static const String jsonPart3 = 'assets/json/part3.json';
-  static const String libMain = 'lib/main.dart';
   static const String logoLogo = 'assets/images/logo/logo.png';
-  static const String modelPart1 = 'lib/data/model/part2.dart';
-  static const String part1Part1Cubit = 'lib/data/cubit/part1/part1_cubit.dart';
-  static const String part1Part1State = 'lib/data/cubit/part1/part1_state.dart';
   static const String splashScreenSplashScreen = 'assets/images/splash_screen/splash_screen.png';
 
 }

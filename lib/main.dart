@@ -1,81 +1,77 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:ielts_speaking/data/bloc/part1/part1_bloc.dart';
-import 'package:ielts_speaking/data/bloc/part2/part2_bloc.dart';
-import 'package:ielts_speaking/data/bloc/part3/part3_bloc.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:ielts_speaking/data/color/color.dart';
-import 'package:ielts_speaking/view/home/bookmarks.dart';
-import 'package:go_router/go_router.dart';
 import 'package:ielts_speaking/view/home/home.dart';
-import 'package:ielts_speaking/view/home/part1/part1.dart';
-import 'package:ielts_speaking/view/home/part2/part2.dart';
-import 'package:ielts_speaking/view/home/part3/part3.dart';
+import 'package:ielts_speaking/view/route/route.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'firebase_options.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(MyApp());
 }
 
-final GoRouter _router = GoRouter(
-  routes: <RouteBase>[
-    GoRoute(
-      path: '/',
-      builder: (BuildContext context, GoRouterState state) {
-        return const Home();
-        // return const Parts();
-      },
-      routes: <RouteBase>[
-        GoRoute(
-          path: 'part1',
-          builder: (BuildContext context, GoRouterState state) {
-            return BlocProvider(
-              create: (context) => Part1Bloc(),
-              child: const part1(),
-            );
-          },
-        ),
-        GoRoute(
-          path: 'part2',
-          builder: (BuildContext context, GoRouterState state) {
-            return BlocProvider(
-              create: (context) => Part2Bloc(),
-              child: const part2(),
-            );
-          },
-        ),
-        GoRoute(
-          path: 'part3',
-          builder: (BuildContext context, GoRouterState state) {
-            return BlocProvider(
-              create: (context) => Part3Bloc(),
-              child: const part3(),
-            );
-          },
-        ),
-        GoRoute(
-          path: 'bookmarks',
-          builder: (BuildContext context, GoRouterState state) {
-            return const bookmarks();
-          },
-        ),
-      ],
-    ),
-  ],
-);
-
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
+    return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         appBarTheme: const AppBarTheme(color: AppColors.appbarTheme),
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      routerConfig: _router,
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.router.onGenerateRoute,
+    );
+  }
+}
+
+class LoginPage extends StatelessWidget {
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+
+  Future<void> _handleSignIn(BuildContext context) async {
+    try {
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser!.authentication;
+      final AuthCredential credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+      await _auth.signInWithCredential(credential);
+
+      // Save tokens to SharedPreferences
+      final SharedPreferences prefs = await _prefs;
+      prefs.setString('accessToken', googleAuth.accessToken ?? '');
+      prefs.setString('idToken', googleAuth.idToken ?? '');
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Home()),
+      );
+    } catch (e) {
+      print("Error signing in: $e");
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Login Page'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () => _handleSignIn(context),
+          child: Text('Sign In with Google'),
+        ),
+      ),
     );
   }
 }

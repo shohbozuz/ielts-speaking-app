@@ -1,14 +1,41 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:ielts_speaking/data/color/color.dart';
+import 'package:ielts_speaking/main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class DrawerWidget extends StatelessWidget {
-  const DrawerWidget({Key? key});
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
+  Future<void> _handleSignOut(BuildContext context) async {
+    try {
+      await _auth.signOut();
+      await _googleSignIn.disconnect();
+
+      // Clear tokens from SharedPreferences
+      final SharedPreferences prefs = await _prefs;
+      prefs.remove('accessToken');
+      prefs.remove('idToken');
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => LoginPage()),
+      );
+    } catch (e) {
+      print("Error signing out: $e");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    final User? user = _auth.currentUser;
+
     return Drawer(
       backgroundColor: AppColors.appbarTheme,
       child: ListView(
@@ -19,16 +46,28 @@ class DrawerWidget extends StatelessWidget {
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Shohbozbek Turgunov",
-                style: GoogleFonts.akshar(color: AppColors.textColor),
-              ),
-              Text(
-                "Id 24384u375",
-                style: GoogleFonts.akshar(
-                  color: AppColors.textColor,
-                ),
-              ),
+              user != null
+                  ? Column(
+                      children: [
+                        CircleAvatar(
+                          backgroundImage: NetworkImage(
+                            user.photoURL ?? '',
+                          ),
+                          radius: 30,
+                        ),
+                        const SizedBox(height: 20),
+                        Text(
+                          '${user.displayName ?? "N/A"}',
+                          style: GoogleFonts.akshar(color: AppColors.textColor),
+                        ),
+                        SizedBox(height: 10),
+                        Text(
+                          '${user.email ?? "N/A"}',
+                          style: GoogleFonts.akshar(color: AppColors.textColor),
+                        ),
+                      ],
+                    )
+                  : Text('User Hisobga kirmagan'),
             ],
           ),
           ListTile(
@@ -43,17 +82,18 @@ class DrawerWidget extends StatelessWidget {
               'Exit',
               style: TextStyle(color: AppColors.textColor, fontSize: 15.0),
             ),
-            onTap: () {},
-          ),
-          ListTile(
-            title: const Text(
-              'Delete Account',
-              style: TextStyle(color: AppColors.textColor, fontSize: 15.0),
-            ),
-            onTap: () {},
+            onTap: () {
+              _handleSignOut(context);
+              Future.delayed(const Duration(seconds: 1), () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              });
+            },
           ),
           const SizedBox(
-            height: 400.0,
+            height: 380.0,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
